@@ -46,6 +46,8 @@
     <Compile Include="CategoriaDao.cs" />
     <Compile Include="ClienteDao.cs" />
     <Compile Include="ConexaoDB.cs" />
+    <Compile Include="DetalheVendaDao.cs" />
+    <Compile Include="FaturaDao.cs" />
     <Compile Include="ModoPagoDao.cs" />
     <Compile Include="Obrigatorio.cs" />
     <Compile Include="ProdutoDao.cs" />

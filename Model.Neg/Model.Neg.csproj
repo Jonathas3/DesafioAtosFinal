@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="CategoriaNeg.cs" />
     <Compile Include="ClienteNeg.cs" />
+    <Compile Include="DetalheVendaNeg.cs" />
+    <Compile Include="FaturaNeg.cs" />
     <Compile Include="ModoPagoNeg.cs" />
     <Compile Include="ProdutoNeg.cs" />
     <Compile Include="Program.cs" />

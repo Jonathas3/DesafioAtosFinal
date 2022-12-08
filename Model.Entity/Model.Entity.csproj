@@ -44,6 +44,8 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="DetalheVenda.cs" />
+    <Compile Include="Fatura.cs" />
     <Compile Include="ModoPago.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
