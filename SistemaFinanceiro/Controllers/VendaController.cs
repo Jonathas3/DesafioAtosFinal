@@ -67,7 +67,7 @@ namespace SistemaFinanceiro.Controllers
         public void carregarModoPagocmb()
         {
             List<ModoPago> data = objModoPagoNeg.findAll();
-            SelectList lista = new SelectList(data, "numPag", "nome");
+            SelectList lista = new SelectList(data, "numPago", "nome");
             ViewBag.ListaModoPago = lista;
         }
 

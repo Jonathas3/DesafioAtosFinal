@@ -16,8 +16,8 @@
             var Cliente = {};
             var n, a,m;
             n = Cliente.Codigo = $(this).children().eq('0').text();
-            a = Cliente.DadosPessoais = $(this).children().eq('1').text() + " " + $(this).children().eq('2').text();
-            m = Cliente.Identificacao = $(this).children().eq('3').text();
+            a = Cliente.DadosPessoais = $(this).children().eq('1').text(); //+ " " + $(this).children().eq('3').text();
+            m = Cliente.Identificacao = $(this).children().eq('2').text();
             console.info(a, n,m);
             window.opener.obterCliente(Cliente);
             window.close();
@@ -40,7 +40,7 @@
                         <div class="form-group col-md-3">
                             @Html.Label("Nome", new { @class = "control-label col-md-4" })
                             <div class="col-md-8">
-                                @Html.TextBox("txtnore", null, new { @class = "form-control" })
+                                @Html.TextBox("txtnome", null, new { @class = "form-control" })
                             </div>
                         </div>
                         <div class="form-group col-md-3">
@@ -72,7 +72,7 @@
             <th>Código</th>
             <th>Nome</th>
             <th>Cpf</th>
-            <th>Direção</th>
+            <th>Endereço</th>
             <th>Telefone</th>
         </tr>
     </thead>
