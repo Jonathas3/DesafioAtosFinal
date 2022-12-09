@@ -8,16 +8,20 @@ namespace Model.Neg
     public class VendaNeg
     {
         private VendaDao objVendaDao;
-        
+        private DetalheVendaDao objDetalheVendaDao;
         public VendaNeg()
         {
             objVendaDao = new VendaDao();
-           
+            objDetalheVendaDao = new DetalheVendaDao();
         }
 
         public string create(Venda objVenda)
         {
-            bool verificacao = true;           
+            bool verificacao = true;
+
+          
+
+
 
             //inicio verificacao total estado=2
             string total = objVenda.Total.ToString();
@@ -67,7 +71,7 @@ namespace Model.Neg
             }
             //fim verificacao de data
 
-            //se tudo tiver ok salve
+           //se tudo tiver ok salve
             objVenda.Estado = 99;
            return  objVendaDao.create(objVenda);
            
@@ -138,18 +142,25 @@ namespace Model.Neg
             bool verificacao = true;
 
             //inicio verificacao de existencia
-            Venda objVendaAux = new Venda();
+            /*Venda objVendaAux = new Venda();
             objVendaAux.IdVenda = objVenda.IdVenda;
             verificacao = objVendaDao.find(objVendaAux);
             if (!verificacao)
             {
                 objVenda.Estado = 33;
                 return;
-            }
-            
-           
+            }*/
+
+
             //VERIFICAR DEPOIS SE EXISTE DETALHE DE VENDAS RELACIONADO
-            
+            DetalheVenda objDetalheVenda = new DetalheVenda();
+            objDetalheVenda.IdVenda = objVenda.IdVenda;
+            verificacao = !objDetalheVendaDao.findPorIdVenda(objDetalheVenda);
+            if (!verificacao)
+            {
+                objVenda.Estado = 34;
+                return;
+            }
 
 
             //se tudo tiver ok pode deletar

@@ -109,7 +109,7 @@
         {
             
         }
-        public Venda(double total, long idCliente, string idVendedor, string data,double taxa)
+        public Venda(double total, long idCliente, string idVendedor, string data, double taxa)
         {            
             this.total = total;           
             this.idCliente = idCliente;

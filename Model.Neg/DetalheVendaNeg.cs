@@ -16,7 +16,7 @@ namespace Model.Neg
         {
             bool verificacao = true;
 
-            //inicio verificacao de cantidaa estado=1
+            //inicio verificacion de cantidaa estado=1
             int quant = 0;
             string quantidade = objDetalheVenda.Quantidade.ToString();
             if (quantidade == null)

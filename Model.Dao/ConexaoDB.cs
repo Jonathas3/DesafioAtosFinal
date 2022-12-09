@@ -9,7 +9,9 @@ namespace Model.Dao
 
         private ConexaoDB()
         {
+            // CONEXAO LOCAL  
             con = new SqlConnection("Data Source=localhost; Initial Catalog=financeiro; Integrated Security=True");
+
         }
 
         public static ConexaoDB saberEstado()

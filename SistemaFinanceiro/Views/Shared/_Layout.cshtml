@@ -31,6 +31,7 @@
    
 </head>
 <body>
+    
     <div id="wrapper">
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -46,7 +47,7 @@
             <ul class="nav navbar-top-links navbar-right">              
                 <!-- /.dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="~/Home/Index">
                         <i class="fa fa-home fa-fw"></i> INICIO
                     </a>
                     <!-- /.dropdown-tasks -->
@@ -115,7 +116,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> Usuários</a>
+                            <a href="~/Account/Register"><i class="fa fa-user fa-fw"></i> Usuários</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-gear fa-fw"></i> Configurações</a>
@@ -125,10 +126,15 @@
                             <a href="#"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
                         </li>
                     </ul>
+
+                   
                     <!-- /.dropdown-user -->
                 </li>
+               
                 <!-- /.dropdown -->
+                
             </ul>
+            
             <!-- /.navbar-top-links -->
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
@@ -239,10 +245,14 @@
             <div class="row">
                 @RenderBody()
             </div>
-
+            @Html.Partial("_LoginPartial")
         </div>
         <!-- /#page-wrapper -->
+       
     </div>
+    
+        
+    
     <!-- /#wrapper -->
     <!-- jQuery -->
     <script src="~/Assets/jquery/jquery.min.js"></script>
@@ -257,6 +267,9 @@
     <!-- Custom Theme JavaScript -->
     <script src="~/Js/sb-admin-2.js"></script>
    
+   
+  
+    @RenderSection("scripts", required: false)
  
 </body>
 </html>

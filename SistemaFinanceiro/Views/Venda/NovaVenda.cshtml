@@ -24,7 +24,7 @@
            
             var i = 0;
             var envio = "{Data:'" + $("#id_data").val() + "',ModoPago:'" + $("#modoPago").val() + "',IdCliente:'" + $("#codigoCliente").val() + "',IdCabecalho:'2',Total:'" + $('#TotalaPagar').val() + "',";
-            $("#detalle tbody tr").each(function (index) {
+            $("#detalhe tbody tr").each(function (index) {
                 if (i == 0) {
                     envio += "ListaDetalhe:[{IdProduto:'" + $(this).find('td').eq(0).text() +
                         "',Quantidade:'" + $(this).find('td').eq(2).text() +
@@ -142,6 +142,8 @@
 
 </script>
 
+<a style="float:right;" class="btn btn-success" href="~/Venda/DetalhesVenda" target="_blank">Detalhes da Venda</a>
+
 <a style="float:right;" class="btn btn-success" href="~/Venda/VendaFatura" target="_blank">Mais Faturas</a>
     
 <a style="float:right;" class="btn btn-success" href="~/Venda/relatorioAtual" target="_blank">Imprimir Fatura</a>
@@ -152,7 +154,7 @@
             <th>Id Venda <input style="color:red; font-size:12px;" class="form-control" type="text" id="id_venda" readonly /></th>
             <th>
                 Data
-                <input style="color:red;font-size:20px;" class="form-control" type="text" id="id_data" readonly value="@DateTime.Now.Year-@DateTime.Now.Month-@DateTime.Now.Day @DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second" />
+                <input style="color:red;font-size:20px;" class="form-control" type="text" id="id_data" readonly value="@DateTime.Now.Day-@DateTime.Now.Month-@DateTime.Now.Year @DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second" />
 
             </th>
         </tr>

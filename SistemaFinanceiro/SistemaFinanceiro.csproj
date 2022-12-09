@@ -50,6 +50,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -171,12 +172,23 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
-    <Compile Include="Controllers\InicioController.cs" />
+    <Compile Include="Controllers\DetalheVendaController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ModoPagoController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\VendaController.cs" />
     <Compile Include="Controllers\VendedorController.cs" />
+    <Compile Include="financeiroDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>financeiroDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="financeiroDataSetProduto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>financeiroDataSetProduto.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -184,6 +196,20 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\frmRelatorioFatura.aspx.cs">
+      <DependentUpon>frmRelatorioFatura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmRelatorioFatura.aspx.designer.cs">
+      <DependentUpon>frmRelatorioFatura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frmRelatorioProduto.aspx.cs">
+      <DependentUpon>frmRelatorioProduto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmRelatorioProduto.aspx.designer.cs">
+      <DependentUpon>frmRelatorioProduto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -212,12 +238,15 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="imagens\logo.jpg" />
     <Content Include="Js\alertify.js" />
     <Content Include="Js\alertify.min.js" />
     <Content Include="Js\Categoria.js" />
     <Content Include="Js\modernizr-2.6.2.js" />
     <Content Include="Js\sb-admin-2.js" />
     <Content Include="Js\sb-admin-2.min.js" />
+    <Content Include="Relatorios\frmRelatorioFatura.aspx" />
+    <Content Include="Relatorios\frmRelatorioProduto.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
@@ -259,6 +288,28 @@
     <Content Include="Assets\font-awesome\scss\_screen-reader.scss" />
     <Content Include="Assets\font-awesome\scss\_stacked.scss" />
     <Content Include="Assets\font-awesome\scss\_variables.scss" />
+    <Content Include="financeiroDataSet.xsc">
+      <DependentUpon>financeiroDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="financeiroDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>financeiroDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="financeiroDataSet.xss">
+      <DependentUpon>financeiroDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="financeiroDataSetProduto.xsc">
+      <DependentUpon>financeiroDataSetProduto.xsd</DependentUpon>
+    </Content>
+    <None Include="financeiroDataSetProduto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>financeiroDataSetProduto.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="financeiroDataSetProduto.xss">
+      <DependentUpon>financeiroDataSetProduto.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -271,7 +322,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -302,7 +355,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Inicio\Index.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Cliente\Create.cshtml" />
     <Content Include="Views\Cliente\BuscarClientes.cshtml" />
@@ -335,6 +387,13 @@
     <Content Include="Views\Venda\NovaVenda.cshtml" />
     <Content Include="Views\Venda\ObterClientes.cshtml" />
     <Content Include="Views\Venda\ObterProdutos.cshtml" />
+    <Content Include="Views\DetalheVenda\Eliminar.cshtml" />
+    <Content Include="Views\DetalheVenda\Index.cshtml" />
+    <Content Include="Views\Venda\RelatorioVendas.cshtml" />
+    <Content Include="Views\Venda\VendaFatura.cshtml" />
+    <Content Include="Views\Venda\DetalhesVenda.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Venda\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -361,6 +420,10 @@
       <Project>{4d79d5db-f6b0-445f-8c38-a2a445ee9b6b}</Project>
       <Name>Model.Neg</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Relatorios\frmRelatorioFatura.rdlc" />
+    <EmbeddedResource Include="Relatorios\frmRelatorioProduto.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

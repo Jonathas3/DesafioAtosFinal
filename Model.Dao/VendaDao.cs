@@ -9,6 +9,7 @@ namespace Model.Dao
     {
         private ConexaoDB objConexaoDB;
         private SqlCommand comando;
+        private SqlDataReader reader;
 
         public VendaDao()
         {
@@ -26,7 +27,7 @@ namespace Model.Dao
                 objConexaoDB.getCon().Open();
 
                 //RECUPERAR O CODIGO AUTOGENERADO
-                SqlDataReader reader = comando.ExecuteReader();
+                reader = comando.ExecuteReader();
                 if (reader.Read())
                 {
                     idVenda = reader[0].ToString();
@@ -101,7 +102,7 @@ namespace Model.Dao
                     objVenda.IdCliente = Convert.ToInt64(reader[2].ToString());
                     objVenda.IdVendedor = reader[3].ToString();
                     objVenda.Data = reader[4].ToString();
-                    objVenda.Taxa = Convert.ToDouble(reader[5].ToString());
+                    objVenda.Taxa = Convert.ToDouble(reader[6].ToString());
                     objVenda.Estado = 99;
 
                 }
@@ -124,7 +125,7 @@ namespace Model.Dao
         public List<Venda> findAll()
         {
             List<Venda> listaVendas = new List<Venda>();
-            string findAll = "select*from Venda";
+            string findAll = "select*from venda";
             try
             {
                 comando = new SqlCommand(findAll, objConexaoDB.getCon());
@@ -138,7 +139,7 @@ namespace Model.Dao
                     objVenda.IdCliente = Convert.ToInt64(reader[2].ToString());
                     objVenda.IdVendedor = reader[3].ToString();
                     objVenda.Data = reader[4].ToString();
-                    objVenda.Taxa = Convert.ToDouble(reader[5].ToString());
+                    objVenda.Taxa = Convert.ToDouble(reader[6].ToString());
                     listaVendas.Add(objVenda);
 
                 }

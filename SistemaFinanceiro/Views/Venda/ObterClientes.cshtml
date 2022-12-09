@@ -16,7 +16,7 @@
             var Cliente = {};
             var n, a,m;
             n = Cliente.Codigo = $(this).children().eq('0').text();
-            a = Cliente.DadosPessoais = $(this).children().eq('1').text(); //+ " " + $(this).children().eq('3').text();
+            a = Cliente.DadosPessoais = $(this).children().eq('1').text() /*+ " - Código do Cliente - " + $(this).children().eq('0').text()*/;
             m = Cliente.Identificacao = $(this).children().eq('2').text();
             console.info(a, n,m);
             window.opener.obterCliente(Cliente);

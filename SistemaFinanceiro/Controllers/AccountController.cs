@@ -12,7 +12,7 @@ using SistemaFinanceiro.Models;
 
 namespace SistemaFinanceiro.Controllers
 {
-    [Authorize]
+    
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -136,7 +136,8 @@ namespace SistemaFinanceiro.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+       
+        
         public ActionResult Register()
         {
             return View();

@@ -6,8 +6,10 @@ using System.Web.Mvc;
 
 namespace SistemaFinanceiro.Controllers
 {
+    [Authorize]
     public class VendaController : Controller
     {
+
         private VendaNeg objVendaNeg;
         private ClienteNeg objClienteNeg;
         private ProdutoNeg objProdutoNeg;
@@ -83,6 +85,9 @@ namespace SistemaFinanceiro.Controllers
             return View();
         }
 
+
+        //ADD DAQUI PRA BAIXO
+
         [HttpPost]
         public ActionResult SalvarVenda(string Data, string modoPago, string IdCliente, string Total, List<DetalheVenda> ListaDetalhe)
         {
@@ -144,7 +149,8 @@ namespace SistemaFinanceiro.Controllers
 
             return Json(mensagem);
         }
-        // CHAMADA PARA RELATORIOS
+
+        //AQUI VAI ENTRAR O RELATORIO
 
         public ActionResult relatorioAtual()
         {
@@ -173,7 +179,6 @@ namespace SistemaFinanceiro.Controllers
             List<Venda> lista = objVendaNeg.findAll();
             return View(lista);
         }
-
 
     }
 }
