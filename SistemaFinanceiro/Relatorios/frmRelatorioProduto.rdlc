@@ -385,7 +385,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>financeiroDataSetProduto</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Hugo\Documents\Visual Studio 2015\Projects\SistemaFinanceiro\SistemaFinanceiro\financeiroDataSetProduto.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\jonat\Documents\Visual Studio 2015\Projects\SistemaFinanceiro\SistemaFinanceiro\financeiroDataSetProduto.xsd</rd:SchemaPath>
         <rd:TableName>produto</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

@@ -1261,7 +1261,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>financeiroDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Hugo\Documents\Visual Studio 2015\Projects\SistemaFinanceiro\SistemaFinanceiro\financeiroDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\jonat\Documents\Visual Studio 2015\Projects\SistemaFinanceiro\SistemaFinanceiro\financeiroDataSet.xsd</rd:SchemaPath>
         <rd:TableName>sp_relatorio_venda</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

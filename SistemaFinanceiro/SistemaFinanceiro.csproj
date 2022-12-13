@@ -184,6 +184,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>financeiroDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="financeiroDataSetProduto.cs">
+      <DependentUpon>financeiroDataSetProduto.xsd</DependentUpon>
+    </Compile>
     <Compile Include="financeiroDataSetProduto.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -195,6 +198,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.5.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relatorios\frmRelatorioFatura.aspx.cs">
       <DependentUpon>frmRelatorioFatura.aspx</DependentUpon>
@@ -210,6 +214,7 @@
     <Compile Include="Relatorios\frmRelatorioProduto.aspx.designer.cs">
       <DependentUpon>frmRelatorioProduto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -228,6 +233,8 @@
     <Content Include="Assets\morrisjs\morris.css" />
     <Content Include="Assets\morrisjs\morris.js" />
     <Content Include="Assets\morrisjs\morris.min.js" />
+    <Content Include="bin\SistemaFinanceiro.dll" />
+    <Content Include="bin\SistemaFinanceiro.pdb" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Css\alertify.bootstrap.css" />
@@ -322,6 +329,11 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
